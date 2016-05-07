@@ -61,17 +61,26 @@
 	// this is called object destructuring
 
 	var Main = __webpack_require__(229);
+	var Weather = __webpack_require__(231);
 
 	ReactDOM.render(React.createElement(
 	  Router,
 	  { history: hashHistory },
-	  React.createElement(Route, { path: '/', component: Main })
+	  React.createElement(
+	    Route,
+	    { path: '/', component: Main },
+	    React.createElement(IndexRoute, { component: Weather })
+	  )
 	), document.getElementById('app'));
 
 	//1 load in everything from the react router module using es6 syntax
 	//2 set the route in the ReactDOM.render and then start making individual routes
 	//3 create our root path to route to the Main component
 	//4 add the alias to our webpack configuration
+	//5 create the Nav component and load it to Main
+	//6 create a Weather component and load it to the main app.jsx for routing
+	//7 put the Weather component into the IndexRoute
+	//8 now using this.props.children in Main will give us the Weather component
 
 /***/ },
 /* 1 */
@@ -25685,7 +25694,8 @@
 	        'h1',
 	        null,
 	        'I\'m the main component'
-	      )
+	      ),
+	      this.props.children
 	    );
 	  }
 	});
@@ -25717,6 +25727,28 @@
 	});
 
 	module.exports = Nav;
+
+/***/ },
+/* 231 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var Weather = React.createClass({
+	  displayName: 'Weather',
+
+	  render: function render() {
+	    return React.createElement(
+	      'h3',
+	      null,
+	      'I am weather'
+	    );
+	  }
+	});
+
+	module.exports = Weather;
 
 /***/ }
 /******/ ]);

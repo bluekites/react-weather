@@ -8,7 +8,8 @@ module.exports = {
     root: __dirname, // sends us to the path of the directory folder we're in
     alias: { // pick names for our components and tell webpack where to find it
       Main: 'app/components/Main.jsx',
-      Nav: 'app/components/Nav.jsx'
+      Nav: 'app/components/Nav.jsx',
+      Weather: 'app/components/Weather.jsx'
     },
     extensions: ['', '.js', '.jsx'] // the extensions we want to be able to process
   },
