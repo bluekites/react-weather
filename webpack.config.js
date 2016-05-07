@@ -9,7 +9,8 @@ module.exports = {
     alias: { // pick names for our components and tell webpack where to find it
       Main: 'app/components/Main.jsx',
       Nav: 'app/components/Nav.jsx',
-      Weather: 'app/components/Weather.jsx'
+      Weather: 'app/components/Weather.jsx',
+      About: 'app/components/About.jsx'
     },
     extensions: ['', '.js', '.jsx'] // the extensions we want to be able to process
   },

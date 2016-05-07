@@ -62,6 +62,7 @@
 
 	var Main = __webpack_require__(229);
 	var Weather = __webpack_require__(231);
+	var About = __webpack_require__(232);
 
 	ReactDOM.render(React.createElement(
 	  Router,
@@ -69,6 +70,7 @@
 	  React.createElement(
 	    Route,
 	    { path: '/', component: Main },
+	    React.createElement(Route, { path: 'about', component: About }),
 	    React.createElement(IndexRoute, { component: Weather })
 	  )
 	), document.getElementById('app'));
@@ -81,6 +83,9 @@
 	//6 create a Weather component and load it to the main app.jsx for routing
 	//7 put the Weather component into the IndexRoute
 	//8 now using this.props.children in Main will give us the Weather component
+	//9 make an about component to render the about page
+	//10 create route for the About component using Route and it will also be rendered as this.props.children in the Main component
+	//11 create links by importing the Link function via the react-router module inside of the Nav component
 
 /***/ },
 /* 1 */
@@ -25710,6 +25715,11 @@
 
 	var React = __webpack_require__(1);
 
+	var _require = __webpack_require__(168);
+
+	var Link = _require.Link;
+
+
 	var Nav = React.createClass({
 	  displayName: 'Nav',
 
@@ -25721,6 +25731,16 @@
 	        'h2',
 	        null,
 	        'I am a nav'
+	      ),
+	      React.createElement(
+	        Link,
+	        { to: '/' },
+	        'Current Weather'
+	      ),
+	      React.createElement(
+	        Link,
+	        { to: '/about' },
+	        'About Us'
 	      )
 	    );
 	  }
@@ -25749,6 +25769,28 @@
 	});
 
 	module.exports = Weather;
+
+/***/ },
+/* 232 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var About = React.createClass({
+	  displayName: 'About',
+
+	  render: function render() {
+	    return React.createElement(
+	      'h3',
+	      null,
+	      'About Page'
+	    );
+	  }
+	});
+
+	module.exports = About;
 
 /***/ }
 /******/ ]);

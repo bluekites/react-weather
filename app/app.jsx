@@ -7,11 +7,12 @@ var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 // this is called object destructuring
 var Main = require('Main');
 var Weather = require('Weather');
-
+var About = require('About');
 
 ReactDOM.render(
   <Router history={hashHistory}>
     <Route path="/" component={Main}> 
+      <Route path="about" component={About} />
       <IndexRoute component={Weather} />
     </Route>
   </Router>, 
@@ -25,3 +26,6 @@ ReactDOM.render(
 //6 create a Weather component and load it to the main app.jsx for routing
 //7 put the Weather component into the IndexRoute
 //8 now using this.props.children in Main will give us the Weather component
+//9 make an about component to render the about page
+//10 create route for the About component using Route and it will also be rendered as this.props.children in the Main component
+//11 create links by importing the Link function via the react-router module inside of the Nav component
