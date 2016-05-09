@@ -41,3 +41,7 @@ ReactDOM.render(
 //18 wire up openWeatherMap.jsx to the Weather.jsx inside of the searchHandler
 
 //19 set isLoading state in Weather.jsx for the display temperature to better user experience 
+
+//20 About page is a good example of a stateless functional component because they only define the render method and has no state. we can easily refactor this with the arrow function from ES6
+
+//21 Refactor About, Example Nav WeatherMessage and Main

@@ -2,7 +2,7 @@ var React = require('react');
 var Nav = require('Nav');
 
 
-var Main = React.createClass({
+/*var Main = React.createClass({
   render: function(){
     return (
       <div>
@@ -12,6 +12,16 @@ var Main = React.createClass({
       </div>
     );
   }
-});
+});*/
+
+var Main = (props) => {
+  return (
+    <div>
+      <Nav />
+      <h1>I'm the main component</h1>
+      {props.children}
+    </div>
+  );
+};
 
 module.exports = Main;

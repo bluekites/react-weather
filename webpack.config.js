@@ -29,5 +29,6 @@ module.exports = {
         exclude: /(node_modules|bower_components)/ // ignore these folders to not let webpack parse through them
       }
     ]
-  }
+  },
+  devtool: 'cheap-module-eval-source-map' // lets us create source maps that the browser automatically understand for debugging
 };

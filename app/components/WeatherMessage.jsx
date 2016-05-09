@@ -1,6 +1,6 @@
 var React = require('react');
 
-var WeatherMessage = React.createClass({
+/*var WeatherMessage = React.createClass({
   
   render: function(){
     //var temp = this.props.temp;
@@ -11,6 +11,13 @@ var WeatherMessage = React.createClass({
       <h3>The current weather in {city} is: {temp}</h3>
     );
   }
-});
+});*/
+
+var WeatherMessage = ({temp, city}) => {
+  // var {temp, city} = props; this destructuring is so common that in arrow function we can declare the variables inside the props and it will be automatically destructured
+  return (
+    <h3>The current weather in {city} is: {temp}</h3>
+  );
+};
 
 module.exports = WeatherMessage;
