@@ -1,9 +1,21 @@
+var webpack = require('webpack');
+
 module.exports = {
-  entry: './app/app.jsx', // entry point
+  // entry will use script loaders to package the jquery and foundation js scripts
+  entry: ['script!jquery/dist/jquery.min.js', 'script!foundation-sites/dist/foundation.min.js', './app/app.jsx'], // entry point
   output: {
     path: __dirname, //current directory path
     filename: './public/bundle.js' //output file location
   },
+  externals: {  // key value pair where the key is the module name and the value is the variable name we want available in our external script files
+    jquery: 'jQuery' 
+  },
+  plugins: [
+    new webpack.ProvidePlugin({  // allows for webpack to detect the specific symbols and load up jquery module
+      '$': 'jquery',
+      'jQuery': 'jquery' 
+    })
+  ],
   resolve: {
     root: __dirname, // sends us to the path of the directory folder we're in
     alias: { // pick names for our components and tell webpack where to find it
