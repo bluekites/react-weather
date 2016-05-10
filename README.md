@@ -43,3 +43,6 @@ Inside webpack.config.js update the following:
 5 load up foundation css in app.jsx
 6 require('style!css!foundation-sites/dist/foundation.min.css') inside of app.jsx
 7 $(document).foundation(); using jquery to call the foundation method
+
+###Potential improvements
+1 have city name be the return data city name from API
