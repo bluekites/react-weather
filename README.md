@@ -54,5 +54,11 @@ Inside webpack.config.js update the following:
 )
 3 add the alias into webpack.config
 
+###Using scss
+1 install sass-loader and node-sass
+2 rename css to scss
+3 update alias in webpack config
+4 add the sass-loader to app.jsx
+
 ###Potential improvements
 1 have city name be the return data city name from API
