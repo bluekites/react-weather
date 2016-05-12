@@ -44,5 +44,15 @@ Inside webpack.config.js update the following:
 6 require('style!css!foundation-sites/dist/foundation.min.css') inside of app.jsx
 7 $(document).foundation(); using jquery to call the foundation method
 
+###Notes on property validation
+1 use propTypes to get a range of validators to make sure the data we get is validation
+2 warnings will be in the javascript console
+
+###Custom styles
+1 create new styles folder under root directory
+2 add new require statement in app.jsx and use the loader to add in our custom css (require('style!css!applicationStyles');
+)
+3 add the alias into webpack.config
+
 ###Potential improvements
 1 have city name be the return data city name from API
